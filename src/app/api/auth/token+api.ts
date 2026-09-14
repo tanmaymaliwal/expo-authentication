@@ -38,7 +38,7 @@ export async function POST(request: Request) {
     }
 
     const secret = new TextEncoder().encode(JWT_SECRET);
-    const accessToken = new jose.SignJWT({
+    const accessToken = await new jose.SignJWT({
       sub: user.sub,
       name: user.name,
       email: user.email,
@@ -152,9 +152,11 @@ async function exchangeGoogle(
   );
 
   const userInfo = await userResponse.json();
+  console.log(userInfo);
+  
 
   return {
-    sub: String(userInfo.sub),
+    sub: String(userInfo.id),
     name: userInfo.name,
     email: userInfo.email,
     picture: userInfo.picture,

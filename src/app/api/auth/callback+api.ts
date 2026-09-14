@@ -4,7 +4,7 @@ export async function GET(request: Request) {
     const state = url.searchParams.get("state");
     const code = url.searchParams.get("code");
   
-    const redirectUri = "expoauthenticationsession://";
+    const redirectUri = "expoauthentication://";
   
     const params = new URLSearchParams({
       code: code || "",

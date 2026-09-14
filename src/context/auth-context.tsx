@@ -147,6 +147,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const signIn = async (provider: Provider = "google") => {
+    console.log("signIn called with provider:", provider)
     try {
       if (provider === "github") {
         if (!githubRequest) return;
