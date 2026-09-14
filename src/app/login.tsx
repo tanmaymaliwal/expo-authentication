@@ -1,4 +1,4 @@
-// import { BetterAuthPanel } from "@/components/better-auth-panel";
+import { BetterAuthPanel } from "@/components/better-auth-pannel";
 import { useAuth } from "@/context/auth-context";
 import { Image } from "expo-image";
 import React, { useState } from "react";
@@ -110,7 +110,7 @@ const login = () => {
 
         {activeTab === "better" ? (
           <View style={{ width: "100%" }}>
-            {/* <BetterAuthPanel /> */}
+            <BetterAuthPanel />
           </View>
         ) : (
           <View style={{ width: "100%", gap: 14 }}>
